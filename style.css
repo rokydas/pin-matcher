@@ -104,6 +104,6 @@ color: #E0B612;
 }
 
 /* Added by rokydas */
-#correct-pin, #wrong-pin{
+#correct-pin, #wrong-pin, #try-full{
     display: none;
 }
