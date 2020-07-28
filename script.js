@@ -1,3 +1,4 @@
+// Click in generateButton
 const generateButton = document.getElementById('generate-btn');
 generateButton.addEventListener('click', function () {
     let randomNumber = Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
@@ -5,6 +6,7 @@ generateButton.addEventListener('click', function () {
     realPin.value = randomNumber;
 })
 
+// Function to find out input value from input-pin id. 
 function takeInputPinValue() {
     let inputPin = document.getElementById('input-pin').value;
     let inputPinValue;
@@ -17,6 +19,7 @@ function takeInputPinValue() {
     return inputPinValue;
 }
 
+// Function to attach a digit beside another. (3+4 = 34)
 function attachDigit(numberId) {
     const numberButton1 = document.getElementById(numberId);
     numberButton1.addEventListener('click', function () {
@@ -27,11 +30,7 @@ function attachDigit(numberId) {
     })
 }
 
-// const numberButton1 = document.getElementById('number-button-1');
-// numberButton1.addEventListener('click', function(){
-//     console.log(numberButton1.innerText);
-// })
-
+// Calling attachDigit function for all number button
 attachDigit('number-button-1');
 attachDigit('number-button-2');
 attachDigit('number-button-3');
@@ -43,6 +42,7 @@ attachDigit('number-button-8');
 attachDigit('number-button-9');
 attachDigit('number-button-0');
 
+// Click in backspaceButton
 const backspaceButton = document.getElementById('backspace-button');
 backspaceButton.addEventListener('click', function () {
     let inputPin = document.getElementById('input-pin').value;
@@ -56,13 +56,16 @@ backspaceButton.addEventListener('click', function () {
     }
 })
 
+// Click in AC button
 const acButton = document.getElementById('ac-button');
 acButton.addEventListener('click', function () {
     document.getElementById('input-pin').value = '';
 })
 
+// To count the number of try
 let tryCount = 3;
 
+// To submit the pin and check wether the pin is matched or not with randomNumber. 
 const submitButton = document.getElementById('submit-button');
 submitButton.addEventListener('click', function () {
     if (tryCount > 0) {
